@@ -1,0 +1,2 @@
+pkill ags
+ags
