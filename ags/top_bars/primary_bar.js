@@ -241,7 +241,7 @@ const bluetooth = Widget.Button({
     child: Widget.Icon({
         icon: `${App.configDir}/resources/bluetooth.png`,
     }),
-    on_clicked: () => Utils.exec("blueberry"),
+    on_clicked: () => Utils.execAsync("blueberry"),
 });
 
 // I want to make my own settings menu at some point~
@@ -250,12 +250,12 @@ const wifi = Widget.Button({
     child: Widget.Icon({
         icon: `network-wireless`
     }),
-    on_clicked: () => Utils.exec("nm-connection-editor"),
+    on_clicked: () => Utils.execAsync("nm-connection-editor"),
 });
 
 const volume_indicator = Widget.Button({
     class_name: 'volume_indicator',
-    on_clicked: () => Utils.exec("pavucontrol"),
+    on_clicked: () => Utils.execAsync("pavucontrol"),
     on_scroll_up: () => {
         if (!audio.speaker) return;
         audio.speaker.volume += 0.03;
