@@ -6,7 +6,7 @@ I dont know if that is important, but it might be so just in case :]
 > Fastfetch
 > Hyprland
 > Kitty (I turned off the bell it hurt my earssss)
-
+> NeoVim
 # I will make an install script in the future
 
 # Programs that it defaults to
