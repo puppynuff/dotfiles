@@ -6,8 +6,8 @@
 // #############
 // ## IMPORTS ##
 // #############
-import { primary_bar } from "./top_bars/primary_bar.js"
-import { secondary_bar } from "./top_bars/secondary_bar.js"
+import { main_bar } from "./top_bars/main_bar.js";
+import { secondary_bar } from "./top_bars/.old/secondary_bar.js"
 
 // #################
 // ## BAR WIDGETS ##
@@ -24,6 +24,6 @@ Utils.monitorFile(
 
 
 App.config({
-    windows: [primary_bar(0), secondary_bar(1)],
+    windows: [main_bar(0), secondary_bar(1)],
     style: `./theme.css`
 })

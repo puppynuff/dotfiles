@@ -3,13 +3,15 @@
 // #############
 // Kokabiel, October 21
 
-import { Workspaces } from "../Services/hyprland.js";
+// This will be reworked later on.
+
+import { Workspaces } from "../../Services/old/hyprland.js";
 
 
 const workspace_widget = Widget.Box({
     class_name: "secondary_workspaces",
     children: [
-        Workspaces([5, 15], [5, 5])
+        Workspaces([5],[5])
     ]
 });
 
@@ -19,9 +21,12 @@ export const secondary_bar = (/** @type {number} */ monitor = 1) =>
         class_name: "primary_bar_window",
         monitor,
         name: `secondary__bar`,
-        anchor: ["top", "left", "right"],
+        anchor: ["bottom", "left", "right"],
         exclusivity: "exclusive",
         child: Widget.CenterBox({
-            center_widget: workspace_widget
+            start_widget: workspace_widget,
+            center_widget: Widget.Label({}),
+
+
         }),
     });

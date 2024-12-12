@@ -4,6 +4,8 @@
 // Kokabiel, October 21
 // https://github.com/end-4/
 
+// THIS IS THE OLD VERSION
+
 // #############
 // ## IMPORTS ##
 // #############
@@ -17,8 +19,8 @@ const { Gravity } = imports.gi.Gdk;
 const { GLib } = imports.gi;
 
 // Custom files
-import { time_variable, cpu_usage } from "../Services/variables.js";
-import { Workspaces } from "../Services/hyprland.js";
+import { time_variable, cpu_usage } from "../../Services/old/variables.js";
+import { Workspaces } from "../../Services/old/hyprland.js";
 
 // #############
 // ## WIDGETS ##

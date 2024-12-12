@@ -1,15 +1,15 @@
 // #############
 // ## CREDITS ##
 // #############
-// Kokabiel, December 8th
+// Kokabiel, October 21
 
 
 // #############
 // ## IMPORTS ##
 // #############
+import hyprland from "resource:///com/github/Aylur/ags/service/hyprland.js";
 
-const hyprland = await Service.import("hyprland");
-
+// Importing
 const dispatch = ws => hyprland.messageAsync(`dispatch workspace ${ws}`);
 
 function generate_children(starting_numbers, length, holderwidget) {
@@ -45,18 +45,18 @@ function generate_children(starting_numbers, length, holderwidget) {
 }
 
 
-export const Workspaces = (starting_numbers = [], length = [], holderwidget, class_name = "workspaces") => Widget.EventBox({
+export const Workspaces = (starting_numbers = [], length = [], holderwidget) => Widget.EventBox({
     onScrollUp: () => dispatch('+1'),
     onScrollDown: () => dispatch('-1'),
     child: Widget.Box({
         children: generate_children(starting_numbers, length)
-    }),
-    class_name
+    })
 });
 
-export function ClientTitle() {
-    return Widget.Label({
-        class_name: "client-title",
-        label: hyprland.active.client.bind("title"),
-    })
-}
+// Widget.Box({
+//     children: Array.from({ length: arr_length }, (_, i) => i + starting_number + 1).map(i => Widget.Button({
+//         attribute: i,
+//         label: `${i}`,
+//         onClicked: () => dispatch(i),
+//     }))
+// })
